@@ -71,8 +71,8 @@ void fftConvolution(int lenH, int *h, int lenX, int *x, int *y);
 void karatsubaConvolution(int lenH, int *h, int lenX, int *x, int *y);
 void duplConvolution(int lenH, int *h, int lenX, int *x, int *y);
 void sietseConvolution(int lenH, int *h, int lenX, int *x, int *y);
-void lrsnoConvolution(int lenH, int *h, int lenX, int *x, int *y);
-void lrsnoConvolutionSort(int lenH, int *h, int lenX, int *x, int *y);
+void lrnopConvolution(int lenH, int *h, int lenX, int *x, int *y);
+void lrnopConvolutionSort(int lenH, int *h, int lenX, int *x, int *y);
 void oamfftConvolution(int lenH, int *h, int lenX, int *x, int *y);
 void derivativeConvolution(int lenH, int *h, int lenX, int *x, int *y);
 void nttConvolutionBarret(int lenH, int *h, int lenX, int *x, int *y);
@@ -107,11 +107,11 @@ void clearHashMap();
 
 int main(int argc, char *argv[]) {
   void (*algorithm[])(int,int*,int,int*,int*) = {
-     fftConvolution, nttcrtConv, nttConvolutionBarret, nttcrtBarrettConv, nttConvolutionSoftware, oamfftConvolution, lrsnoConvolution, derivativeConvolution, duplConvolution, inputSideConvolution,  outputSideConvolution, karatsubaConvolution, sietseConvolution
+     fftConvolution, nttcrtConv, nttConvolutionBarret, nttcrtBarrettConv, nttConvolutionSoftware, oamfftConvolution, lrnopConvolution, derivativeConvolution, duplConvolution, inputSideConvolution,  outputSideConvolution, karatsubaConvolution, sietseConvolution
   };
 
   char name[][32] = {
-    "fftConvolution", "nttcrtConv", "nttConvolutionBarret", "nttcrtBarrettConv", "nttConvolutionSoftware", "oamfftConvolution", "lrsnoConvolution",  "derivativeConvolution", "duplConvolution", "inputSideConvolution", "outputSideConvolution", "karatsubaConvolution", "sietseConvolution"
+    "fftConvolution", "nttcrtConv", "nttConvolutionBarret", "nttcrtBarrettConv", "nttConvolutionSoftware", "oamfftConvolution", "lrnopConvolution",  "derivativeConvolution", "duplConvolution", "inputSideConvolution", "outputSideConvolution", "karatsubaConvolution", "sietseConvolution"
   };
 
   if ((argc < 3) || (argc > 5)) {
